@@ -54,7 +54,7 @@ app.post('/alert', (req, res) => {
 
   setTimeout(() => {
     users[userId].alert = false;
-  }, 60000);
+  }, 15000);
 
   res.sendStatus(200);
 });
