@@ -45,7 +45,7 @@ app.post('/location', (req, res) => {
   res.sendStatus(200);
 });
 
-app.get('/alert', (req, res) => {
+app.post('/alert', (req, res) => {
   const { userId } = req.query;
 
   if (!users[userId]) users[userId] = {};
