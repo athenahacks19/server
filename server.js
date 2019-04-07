@@ -45,5 +45,19 @@ app.post('/location', (req, res) => {
   res.sendStatus(200);
 });
 
+app.get('/alert', (req, res) => {
+  const { userId } = req.query;
+
+  if (!users[userId]) users[userId] = {};
+
+  users[userId].alert = true;
+
+  setTimeout(() => {
+    users[userId].alert = false;
+  }, 60000);
+
+  res.sendStatus(200);
+});
+
 const PORT = process.env.port || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}!`));
