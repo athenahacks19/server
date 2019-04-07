@@ -46,4 +46,5 @@ app.post('/location', (req, res) => {
   res.sendStatus(200);
 });
 
-app.listen(config.port, () => console.log(`Server running on port ${config.port}!`));
+const PORT = process.env.port || config.port;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}!`));
