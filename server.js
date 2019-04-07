@@ -60,7 +60,8 @@ app.post('/alert', (req, res) => {
 });
 
 app.post('/schedule', (req, res) => {
-  const { userId, schedule } = req.query;
+  const { userId } = req.query;
+  const schedule = req.body;
 
   if (!users[userId]) users[userId] = {};
 
