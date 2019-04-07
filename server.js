@@ -59,5 +59,15 @@ app.post('/alert', (req, res) => {
   res.sendStatus(200);
 });
 
+app.post('/schedule', (req, res) => {
+  const { userId, schedule } = req.query;
+
+  if (!users[userId]) users[userId] = {};
+
+  users[userId].schedule = schedule;
+
+  res.sendStatus(200);
+});
+
 const PORT = process.env.port || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}!`));
