@@ -3,7 +3,6 @@
 */
 const express = require('express');
 const morgan = require('morgan');
-const config = require('./config');
 
 /*
   Express Setup
@@ -46,5 +45,5 @@ app.post('/location', (req, res) => {
   res.sendStatus(200);
 });
 
-const PORT = process.env.port || config.port;
+const PORT = process.env.port || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}!`));
